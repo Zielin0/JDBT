@@ -45,7 +45,7 @@ It might develop more with time.
 
 4. Run maven scripts. `clean package`.
 
-5. If no errors jar should appear in the target directory.
+5. If no errors `.jar` should appear in the `target/` directory.
 
 ## Running
 
