@@ -36,7 +36,7 @@ It might develop more with time.
     ```shell
     $ git clone https://github.com/Zielin0/JDBT.git
     ```
-   
+
 2. Open created folder with [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
 
 3. Install all maven dependencies.
@@ -54,6 +54,8 @@ $ java -jar JDBT-1.0-SNAPSHOT.jar <botToken> <yourID>
 ## Configuring
 
 ...
+
+See [TODO](#todo)
 
 ## Dependencies
 
@@ -74,4 +76,8 @@ You can report issues and errors at [Issues Page](https://github.com/Zielin0/JDB
 
 - [ ] Examples (Command & Event)
 - [ ] Configuration. (YML/JSON)
-- [ ] Something like interactions handler (if possible with JDA)
+   - Prefix
+   - Token
+   - Owner's ID
+   - Other
+- [ ] Something like an interactions handler (if possible with JDA)
