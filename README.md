@@ -36,6 +36,8 @@ It might develop more with time.
     ```shell
     $ git clone https://github.com/Zielin0/JDBT.git
     ```
+   
+    Or use a ["Use this template"](https://github.com/Zielin0/JDBT/generate) feature.
 
 2. Open created folder with [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
 
