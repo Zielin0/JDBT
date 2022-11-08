@@ -8,6 +8,7 @@ import xyz.zielinus.jdbt.commands.Command;
 import xyz.zielinus.jdbt.events.Event;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MessageEvent extends Event {
@@ -21,7 +22,7 @@ public class MessageEvent extends Event {
         if (event.getAuthor().isBot()) return;
         if (messageRaw.startsWith(Main.commandManager.getPrefix())) {
             String commandName = messageRaw.split(Main.commandManager.getPrefix())[1];
-            List<String> args = new ArrayList<>(List.of(messageRaw.split(" ")));
+            List<String> args = new ArrayList<>(Arrays.asList(messageRaw.split(" ")));
             args.remove(0);
 
             Command command = Main.commandManager.getCommand(commandName);
