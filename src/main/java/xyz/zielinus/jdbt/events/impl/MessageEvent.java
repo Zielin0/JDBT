@@ -7,10 +7,6 @@ import xyz.zielinus.jdbt.Main;
 import xyz.zielinus.jdbt.commands.Command;
 import xyz.zielinus.jdbt.events.Event;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MessageEvent extends Event {
     public MessageEvent(JDA bot) {
         super("messageCreate", bot);
@@ -21,11 +17,12 @@ public class MessageEvent extends Event {
         String messageRaw = event.getMessage().getContentRaw();
         if (event.getAuthor().isBot()) return;
         if (messageRaw.startsWith(Main.commandManager.getPrefix())) {
-            String commandName = messageRaw.split(Main.commandManager.getPrefix())[1];
-            List<String> args = new ArrayList<>(Arrays.asList(messageRaw.split(" ")));
-            args.remove(0);
+            if (!(messageRaw.split(Main.commandManager.getPrefix()).length > 0)) return;
 
-            Command command = Main.commandManager.getCommand(commandName);
+            String commandName = messageRaw.split(Main.commandManager.getPrefix())[1].split(" ")[0];
+            String[] args = messageRaw.split(" ");
+
+            Command command = Main.commandManager.getCommandByName(commandName) == null ? Main.commandManager.getCommandByAlias(commandName) : Main.commandManager.getCommandByName(commandName);
 
             if (command == null) return;
 
@@ -34,7 +31,7 @@ public class MessageEvent extends Event {
                 return;
             }
 
-            command.execute(bot, event.getMessage(), String.valueOf(args));
+            command.execute(bot, event.getMessage(), args);
         }
 
     }

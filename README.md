@@ -90,7 +90,7 @@ import xyz.zielinus.jdbt.commands.Command;
 
 public class TestCommand extends Command {
     public TestCommand() {
-        super("example", Category.MISC, false); // name, category, ownerOnly
+        super("example", Category.MISC, false, "e", "ex"); // name, category, ownerOnly, ...aliases
     }
 
     @Override
