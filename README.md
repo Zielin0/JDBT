@@ -94,7 +94,7 @@ public class TestCommand extends Command {
     }
 
     @Override
-    public void execute(JDA client, Message message, String... args) {
+    public void execute(JDA client, Message message, String[] args) {
         // do stuff
     }
 }
