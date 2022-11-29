@@ -21,6 +21,9 @@ public class Main {
     @Getter
     private static String ownerID;
 
+    @Getter
+    public static String prefix;
+
     static Collection<GatewayIntent> intents = new ArrayList<>(Arrays.asList(
             GatewayIntent.GUILD_MEMBERS,
             GatewayIntent.GUILD_BANS,
@@ -42,18 +45,20 @@ public class Main {
 
     @SneakyThrows
     public static void main(String[] args) {
+        if (args.length < 3) {
+            throw new Exception("Usage: jdbt.jar <prefix> <token> <ownerID>");
+        }
+
+        prefix = args[0];
+
         EventManager eventManager = new EventManager();
-        commandManager =  new CommandManager("!");
+        commandManager =  new CommandManager(getPrefix());
 
         System.out.println("Welcome To Java Discord Bot Template");
         System.out.println("By: Zielino");
 
-        if (args.length < 2) {
-            throw new Exception("Usage: jdbt.jar <token> <ownerID>");
-        }
-
-        String token = args[0];
-        ownerID = args[1];
+        String token = args[1];
+        ownerID = args[2];
 
         bot = JDABuilder.createDefault(token)
                 .enableIntents(intents)

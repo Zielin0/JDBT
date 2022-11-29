@@ -51,7 +51,7 @@ It might develop more with time.
 ## Running
 
 ```shell
-$ java -jar JDBT-1.1-SNAPSHOT.jar <botToken> <yourID>
+$ java -jar JDBT-1.1-SNAPSHOT.jar <prefix> <botToken> <yourID>
 ```
 
 ## Configuring
